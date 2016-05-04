@@ -1,8 +1,8 @@
 from django.conf.urls import url, include
 
-from comments.views import comment_thread
+from comments.views import comment_thread, comment_delete
 
 urlpatterns = [
 	url(r'^(?P<id>\d+)/$', comment_thread, name="thread"),
-	url(r'^posts/', include("posts.urls", namespace='posts')),
+	url(r'^(?P<id>\d+)/delete/$', comment_delete, name="delete"),
 ]
